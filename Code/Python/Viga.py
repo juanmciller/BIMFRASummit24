@@ -1,45 +1,58 @@
-# Importamos las clases Point y Line del módulo Autodesk.DesignScript.Geometry
-from Autodesk.DesignScript.Geometry import Point, Line
+from Autodesk.DesignScript.Geometry import (
+    Point,
+    Line,
+)  # Importar las clases Point y Line del módulo DesignScript.Geometry de Autodesk
+import Revit.Elements  # Importar el módulo Revit.Elements
+import clr  # Importar Common Language Runtime (CLR) para interoperabilidad con .NET
 
-# Importamos el módulo Revit.Elements
-import Revit.Elements
-
-# Importamos el módulo clr para poder extender funcionalidades
-import clr
-
-# Extendemos las funcionalidades de Revit.Elements
-clr.ImportExtensions(Revit.Elements)
+clr.ImportExtensions(
+    Revit.Elements
+)  # Extender las funcionalidades de Revit.Elements con CLR
 
 
-# Definimos la clase Viga
 class Viga:
-    # Método constructor de la clase Viga
     def __init__(self, startPoint: Point, endPoint: Point, level, framingType) -> None:
-        self.startPoint = startPoint  # Punto de inicio de la viga
-        self.endPoint = endPoint  # Punto de fin de la viga
-        self.level = level  # Nivel en el que se ubicará la viga
-        self.framingType = framingType  # Tipo de estructura de la viga
+        """
+        Constructor para la clase Viga.
 
-    # Método para definir la posición de la viga como una línea
+        :param startPoint: Punto de inicio de la viga
+        :param endPoint: Punto de finalización de la viga
+        :param level: Nivel en el que se colocará la viga
+        :param framingType: Tipo de estructura de la viga
+        """
+        self.startPoint = startPoint  # Asignar el punto de inicio a la viga
+        self.endPoint = endPoint  # Asignar el punto de finalización a la viga
+        self.level = level  # Asignar el nivel de la viga
+        self.framingType = framingType  # Asignar el tipo de estructura de la viga
+
     def definirPosicion(self) -> Line:
-        # Creamos una línea a partir del punto de inicio y el punto de fin
-        return Line.ByStartPointEndPoint(self.startPoint, self.endPoint)
+        """
+        Define la posición de la viga creando una línea entre los puntos de inicio y final.
 
-    # Método para crear la viga en Revit
-    def crearViga(self) -> Revit.Elements.StructuralFraming:
-        # Creamos la viga utilizando el método BeamByCurve de StructuralFraming
+        :return: Línea que representa la posición de la viga
+        """
+        return Line.ByStartPointEndPoint(
+            self.startPoint, self.endPoint
+        )  # Crear una línea desde el punto de inicio al punto de finalización
+
+    def creaViga(self) -> Revit.Elements.StructuralFraming:
+        """
+        Crea la viga en Revit utilizando la línea definida y los parámetros dados.
+
+        :return: Objeto de viga estructural de Revit
+        """
         return Revit.Elements.StructuralFraming.BeamByCurve(
             self.definirPosicion(), self.level, self.framingType
-        )
+        )  # Crear la viga estructural en Revit con la línea definida, el nivel y el tipo de estructura
 
 
-# Creamos una instancia de la clase Viga con puntos de coordenadas específicos, nivel y tipo de estructura proporcionados
-viga: Viga = Viga(
-    Point.ByCoordinates(0, 0, 0),  # Punto de inicio en las coordenadas (0, 0, 0)
-    Point.ByCoordinates(10, 10, 1),  # Punto de fin en las coordenadas (10, 10, 1)
-    IN[0],  # Nivel de la viga (entrada IN[0])
-    IN[1],  # Tipo de estructura de la viga (entrada IN[1])
+# Crear una instancia de la clase Viga con puntos específicos, nivel y tipo de estructura obtenidos de IN
+viga_instancia: Viga = Viga(
+    Point.ByCoordinates(0, 0, 0),  # Punto de inicio (0, 0, 0)
+    Point.ByCoordinates(10, 10, 1),  # Punto de finalización (10, 10, 1)
+    IN[0],  # Nivel desde la entrada IN
+    IN[1],  # Tipo de estructura desde la entrada IN
 )
 
-# Salida que incluye la viga creada, los atributos de la instancia viga y la instancia misma
-OUT = viga.crearViga(), vars(viga), viga
+# Salida del script: la viga creada y la instancia de la clase Viga
+OUT = viga_instancia.creaViga(), viga_instancia
