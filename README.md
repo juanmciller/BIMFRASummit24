@@ -4,8 +4,18 @@
 Repositorio creado exclusivamente para el evento __BIMFRASummit'24__ organizado por __Autodesk__.
 
 [![X (formerly Twitter) URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Fx.com%2FJuanMCiller&label=%40JuanMCiller)](https://x.com/JuanMCiller)
+[![Badge Text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+)](https://www.linkedin.com/in/juanmartinezciller/)
+[![Badge Text](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCl2vD-vf_45fh__aulO7jng)
 
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCl2vD-vf_45fh__aulO7jng?link=www.youtube.com%2F%40JMCiller)](www.youtube.com/@JMCiller)
+
+
+[![Badge Text](https://link-to-badge-image)](https://link-to-badge-page)
+
+
+
+
+
 
 
 
