@@ -5,3 +5,9 @@ Repositorio creado exclusivamente para el evento __BIMFRASummit'24__ organizado 
 
 [![X (formerly Twitter) URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Fx.com%2FJuanMCiller&label=%40JuanMCiller)](https://x.com/JuanMCiller)
 
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCl2vD-vf_45fh__aulO7jng?link=www.youtube.com%2F%40JMCiller)](www.youtube.com/@JMCiller)
+
+
+
+
+
