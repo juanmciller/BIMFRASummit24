@@ -1,0 +1,328 @@
+{
+  "Uuid": "a2629634-1f0f-45ef-84e0-2c7c73f70288",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "darBienvenida",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "DesignScript.Builtin.Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "c01f2cb6bb0048ea900b5b754a41314d",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def darBienvenida(nombre : string)\n{\n    return \"Bienvenid@ a BIMFRASummit'24, \" + nombre;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "05ac37abe89b4bb6ae49df44b5d92cef",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4eae024f85b545ea98eccd0229803f28",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "darBienvenida(\"Juan\");"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "2acf82c835684a8f9503246b8514ce41",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ec2eb06e644449a79bc26bfac681409a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "darBienvenida(\"Maria\");"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import sys\r\nimport getpass\r\n\r\n# Retrieve the current user's name\r\nuserName = getpass.getuser()\r\n\r\n# Get the file name from the input\r\nfileName = IN[0]\r\nnombre= IN[1]\r\n\r\n# Construct the file path using the retrieved username and the provided file name\r\nfilePath = f'C:\\\\Users\\\\{userName}\\\\Desktop\\\\{fileName}'\r\n\r\nsys.path.append(filePath)\r\n\r\nfrom darBienvenida import *\r\n\r\nOUT = darBienvenida(IN[1])",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "fa22d7e046334f969204a5b0adebf084",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "40b8abc9a59443838a49a5d2e7afd806",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6b350980f6114eae902d8f88d46be9d2",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5ee841f704b84c4aa4099b2934793d66",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "197c878adfed4d2ab8730ca0118e5b1e",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6e7d16d988cc47fea44c42bd96ee1e33",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "darBienvenida.py"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "24a74d8c7eac45bf9df1f9949c4fa9ec",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "faf6b5effac34454816095599cd93908",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Juan"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6e7d16d988cc47fea44c42bd96ee1e33",
+      "End": "40b8abc9a59443838a49a5d2e7afd806",
+      "Id": "fff26b3267f04f939ed1f5d7860b218f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "faf6b5effac34454816095599cd93908",
+      "End": "6b350980f6114eae902d8f88d46be9d2",
+      "Id": "3a3a1f1adb5b48ef90f19be7840cffab",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "c01f2cb6bb0048ea900b5b754a41314d",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1323.4797626866393,
+        "Y": 139.81823196186843
+      },
+      {
+        "Id": "05ac37abe89b4bb6ae49df44b5d92cef",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1526.6797652460987,
+        "Y": 315.81390647541122
+      },
+      {
+        "Id": "2acf82c835684a8f9503246b8514ce41",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1519.7359837727456,
+        "Y": 501.11877008821608
+      },
+      {
+        "Id": "fa22d7e046334f969204a5b0adebf084",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1273.6102204239007,
+        "Y": 626.64175191948084
+      },
+      {
+        "Id": "197c878adfed4d2ab8730ca0118e5b1e",
+        "Name": "Nombre Archivo",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 962.277247547772,
+        "Y": 611.424453812841
+      },
+      {
+        "Id": "24a74d8c7eac45bf9df1f9949c4fa9ec",
+        "Name": "Nombre",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1002.3961664321039,
+        "Y": 741.473102738188
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "ff2478da25974a42aa00dbbb1f556509",
+        "Title": "Desde Fichero",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "fa22d7e046334f969204a5b0adebf084",
+          "197c878adfed4d2ab8730ca0118e5b1e",
+          "24a74d8c7eac45bf9df1f9949c4fa9ec"
+        ],
+        "HasNestedGroups": false,
+        "Left": 952.277247547772,
+        "Top": 538.424453812841,
+        "Width": 505.33297287612868,
+        "Height": 335.04864892534704,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 611.424453812841,
+        "InitialHeight": 333.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "e32d62b7772c4dc1ba824c4f9a479cdb",
+        "Title": "DesignScript",
+        "DescriptionText": "El código puede ser copiado desde cualquier repositorio (GitHub).",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "c01f2cb6bb0048ea900b5b754a41314d",
+          "05ac37abe89b4bb6ae49df44b5d92cef",
+          "2acf82c835684a8f9503246b8514ce41"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1313.4797626866393,
+        "Top": 66.818231961868435,
+        "Width": 491.0,
+        "Height": 566.30053812634765,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 139.81823196186843,
+        "InitialHeight": 523.30053812634776,
+        "TextblockHeight": 63.0,
+        "Background": "#FFFFB8D8"
+      }
+    ],
+    "X": -70.26412997366333,
+    "Y": -68.701196208153078,
+    "Zoom": 1.0792537289518347
+  }
+}
