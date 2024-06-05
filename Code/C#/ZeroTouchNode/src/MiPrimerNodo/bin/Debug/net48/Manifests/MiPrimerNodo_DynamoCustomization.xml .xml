@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>MiPrimerNodo</name>
+	</assembly>
+	<namespaces>
+		<namespace name="MiPrimerNodo">
+			<category>BIMFRASummit'24</category>
+		</namespace>
+	</namespaces>
+</doc>

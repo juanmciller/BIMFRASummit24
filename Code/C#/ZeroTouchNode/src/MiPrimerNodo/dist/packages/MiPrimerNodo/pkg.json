@@ -1,0 +1,28 @@
+{
+  "license": "MIT",
+  "file_hash": null,
+  "name": "BIMFRASummit'24 - Dynamo",
+  "version": "1.1.0",
+  "description": "Nodo demostración para la presentación BIMFRASummit´24",
+  "group": "",
+  "keywords": [
+    "juanmciller"
+  ],
+  "dependencies": [],
+  "host_dependencies": [
+    "Revit",
+    "Civil 3D"
+  ],
+  "contents": "",
+  "engine_version": "2.19.3.6394",
+  "engine": "dynamo",
+  "engine_metadata": "",
+  "site_url": "https://www.linkedin.com/in/juanmartinezciller/",
+  "repository_url": "https://github.com/juanmciller/BIMFRASummit24",
+  "contains_binaries": true,
+  "node_libraries": [
+    "MiPrimerNodo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "copyright_holder": "Juan Martinez Ciller",
+  "copyright_year": "2024"
+}

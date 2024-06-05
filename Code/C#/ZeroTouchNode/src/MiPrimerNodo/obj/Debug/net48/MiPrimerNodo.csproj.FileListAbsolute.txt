@@ -1,0 +1,15 @@
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\bin\Debug\net48\Manifests\MiPrimerNodo_DynamoCustomization.xml .xml
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\bin\Debug\net48\MiPrimerNodo.dll
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\bin\Debug\net48\MiPrimerNodo.pdb
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\bin\Debug\net48\MiPrimerNodo.xml
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.csproj.AssemblyReference.cache
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.MiPrimerNodoImages.resources
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.csproj.GenerateResource.cache
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.AssemblyInfoInputs.cache
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.AssemblyInfo.cs
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.csproj.CoreCompileInputs.cache
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.sourcelink.json
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.dll
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.xml
+C:\GitHub Dektop\BIMFRASummit24\Code\C#\ZeroTouchNode\src\MiPrimerNodo\obj\Debug\net48\MiPrimerNodo.pdb

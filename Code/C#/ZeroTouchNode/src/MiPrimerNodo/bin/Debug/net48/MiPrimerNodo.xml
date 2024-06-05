@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MiPrimerNodo</name>
+    </assembly>
+    <members>
+        <member name="T:MiPrimerNodo.BIMFRASummit24">
+            <summary>
+            BIMFRASummit'24 clase donde se alojan todos los nodos referentes al evento.
+            </summary>
+        </member>
+        <member name="M:MiPrimerNodo.BIMFRASummit24.#ctor">
+            <summary>
+            Constructor vacio para evitar cargar nodos innecesarios.
+            </summary>
+        </member>
+        <member name="M:MiPrimerNodo.BIMFRASummit24.DarBienvenida(System.String)">
+            <summary>
+            Este nodo dará la bienvenida al evento BIMFRASummit´24.
+            </summary>
+            <param name="nombre">Nombre del asistente al evento.</param>
+            <returns>Mensaje con bienvenida.</returns>
+        </member>
+        <member name="T:MiPrimerNodo.MiPrimerNodoImages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MiPrimerNodo.MiPrimerNodoImages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MiPrimerNodo.MiPrimerNodoImages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

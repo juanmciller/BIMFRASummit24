@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Product>$(OutDir)</Product>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+	<!--Copy files for local testing-->
+	<Target Name="CopyFiles" AfterTargets="CoreBuild" Condition="'$(OS)' =='Windows_NT'">
+		<Message Text="Build Revit Version $(DynVersion)" Importance="high" />
+
+		<!--Distribution folder-->
+		<PropertyGroup>
+			<PackageFolder>$(ProjectDir)\dist\$(BuildOutput)\packages\$(ProjectName)\</PackageFolder>
+			<BinDistFolder>$(PackageFolder)bin\</BinDistFolder>
+			<ExtraDistFolder>$(PackageFolder)extra\</ExtraDistFolder>
+			<DyfDistFolder>$(PackageFolder)dyf</DyfDistFolder>
+			<DocDistFolder>$(PackageFolder)doc\</DocDistFolder>
+		</PropertyGroup>
+
+		<!--Define file variables-->
+		<ItemGroup>
+			<Configs Include="$(OutDir)*.config" />
+			<Dlls Include="$(OutDir)*.dll" />
+			<Pdbs Include="$(OutDir)*.pdb" />
+			<Xmls Include="$(OutDir)*.xml" />
+			<Pkg Include="$(ProjectDir)*.json" />
+			<DyfFiles Include="$(ProjectDir)DyfFiles\**\*" />
+			<DocFiles Include="$(ProjectDir)doc\**\*" />
+			<SourcePackage Include="$(ProjectDir)\dist\$(BuildOutput)\packages\**\*" />
+		</ItemGroup>
+
+		<!--Copy files in the distribution folder-->
+		<Copy SourceFiles="@(Dlls)" DestinationFolder="$(BinDistFolder)" />
+		<Copy SourceFiles="@(Xmls)" DestinationFolder="$(BinDistFolder)" />
+		<Copy SourceFiles="@(Pkg)" DestinationFolder="$(PackageFolder)" />
+		<Copy SourceFiles="@(DyfFiles)" DestinationFolder="$(DyfDistFolder)" />
+		<Copy SourceFiles="@(DocFiles)" DestinationFolder="$(DocDistFolder)" />
+		<!-- This copies the distributed package on dist folder to the Dynamo Packages folder. -->
+		<Copy SourceFiles="@(SourcePackage)" DestinationFolder="$(AppData)\Dynamo\Dynamo Core\2.19\packages\$(PackageName)\%(RecursiveDir)" />
+
+	</Target>
+	<Target Name="CreateNodeIcons" AfterTargets="PostBuildEvent">
+		<!-- Get System.Drawing.dll     -->
+		<GetReferenceAssemblyPaths TargetFrameworkMoniker=".NETFramework, Version=v4.8">
+			<Output TaskParameter="FullFrameworkReferenceAssemblyPaths" PropertyName="FrameworkAssembliesPath" />
+		</GetReferenceAssemblyPaths>
+		<!-- Get assembly -->
+		<GetAssemblyIdentity AssemblyFiles="$(OutDir)$(TargetName).dll">
+			<Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
+		</GetAssemblyIdentity>
+		<!-- Generate customization dll -->
+		<GenerateResource SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" UseSourcePath="true" Sources="$(ProjectDir)MiPrimerNodoImages.resx" OutputResources="$(ProjectDir)MiPrimerNodoImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+		<AL SdkToolsPath="$(TargetFrameworkSDKToolsDirectory)" TargetType="library" EmbedResources="$(ProjectDir)MiPrimerNodoImages.resources" OutputAssembly="$(OutDir)MiPrimerNodo.customization.dll" Version="%(AssemblyInfo.Version)" />
+	</Target>
+	<ItemGroup>
+	  <EmbeddedResource Update="MiPrimerNodoImages.resx">
+	    <Generator></Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="Manifests\MiPrimerNodo_DynamoCustomization.xml .xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
